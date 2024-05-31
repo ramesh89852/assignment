@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "708a1c31-dc3a-4c80-85d7-21fdda341714",
+		"name": "Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21676752",
+		"_collection_link": "https://orange-moon-427338.postman.co/workspace/My-Workspace~9f8781a6-7229-43c4-8b48-f62e14fed997/collection/21676752-708a1c31-dc3a-4c80-85d7-21fdda341714?action=share&source=collection_link&creator=21676752"
+	},
+	"item": [
+		{
+			"name": "signup user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"ramesh@gmail.com\",\n    \"password\":\"Ramesh123@\",\n    \"password2\": \"Ramesh123@\",\n    \"first_name\":\"Ramesh\",\n    \"last_name\":\"Gudapati\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}api/signup/"
+			},
+			"response": []
+		},
+		{
+			"name": "Login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"ramesh@gmail.com\",\n    \"password\":\"Ramesh123@\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}api/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "search all user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token d1bf92eceb51370c210247a23b06da4a29adc459",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}api/search/?q=ramesh@gmail.com",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "ramesh@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send-friend-request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{authorization}}",
+						"type": "text"
+					}
+				],
+				"url": "{{url}}api/friend-request/send/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "accept  friend request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{authorization}}",
+						"type": "text"
+					}
+				],
+				"url": "{{url}}api/friend-request/accept/2/"
+			},
+			"response": []
+		},
+		{
+			"name": "reject friend-request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{authorization}}",
+						"type": "text"
+					}
+				],
+				"url": "{{url}}api/friend-request/reject/2/"
+			},
+			"response": []
+		},
+		{
+			"name": "get -friends",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token d215863a3426e64f1b419c6e4315053e14fdfd22",
+						"type": "text"
+					}
+				],
+				"url": "{{url}}api/friends"
+			},
+			"response": []
+		},
+		{
+			"name": "pending friend request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token d215863a3426e64f1b419c6e4315053e14fdfd22",
+						"type": "text"
+					}
+				],
+				"url": "{{url}}api/friend-requests/pending/"
+			},
+			"response": []
+		}
+	]
+}
